@@ -77,3 +77,11 @@ insert into films(name, description, year, genre_id, minimal_age, duration_in_mi
 values ('Побег из Шоушенка', 'Бухгалтер Энди Дюфрейн обвинён в убийстве собственной жены и её любовника. Оказавшись в тюрьме под названием Шоушенк, он сталкивается с жестокостью и беззаконием.',
         1994, 1, 16, 142, 2);
 
+insert into halls (name, row_count, place_count, description) values ('Красный зал', 5, 5, 'Зал с красными сидениями');
+insert into halls (name, row_count, place_count, description) values ('Синий зал', 5, 5, 'Зал с синими сидениями');
+insert into halls (name, row_count, place_count, description) values ('Зеленый зал', 5, 5, 'Зал с зелеными сидениями');
+
+insert into film_sessions (film_id, halls_id, start_time, end_time, price) values (1, 1, '2023-03-01 09:00:00', '2023-03-01 12:10:00', 200);
+insert into film_sessions (film_id, halls_id, start_time, end_time, price) values (2, 2, '2023-03-01 12:00:00', '2023-03-01 15:15:00', 200);
+insert into film_sessions (film_id, halls_id, start_time, end_time, price) values (3, 3, '2023-03-01 18:00:00', '2023-03-01 20:22:00', 200);
+

@@ -13,7 +13,7 @@ import ru.job4j.cinema.service.HallCinemaService;
 import ru.job4j.cinema.service.TicketCinemaService;
 
 @ThreadSafe
-@Controller("/ticket")
+@Controller
 public class TicketController {
 
     private final FilmSessionCinemaService filmSessionCinemaService;
@@ -28,7 +28,7 @@ public class TicketController {
         this.hallCinemaService = hallCinemaService;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/ticket/{id}")
     public String getById(Model model, @PathVariable int id) {
         var optFilmSession = filmSessionCinemaService.getFilmSessionById(id);
         if (optFilmSession.isEmpty()) {
@@ -46,7 +46,7 @@ public class TicketController {
         return "tickets/buyTicket";
     }
 
-    @PostMapping("/buy")
+    @PostMapping("/ticket/buy")
     public String buyTicket(@ModelAttribute Ticket ticket, Model model) {
         try {
             var optSavedTicket = ticketCinemaService.save(ticket);

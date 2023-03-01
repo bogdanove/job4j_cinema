@@ -54,7 +54,7 @@
                 </tr>
                 <tr th:each="filmSession : ${filmSessions}">
                     <td><a th:href="@{/films}" th:text="${filmSession.film}"></a></td>
-                    <td><a th:href="@{/halls}" th:text="${filmSession.hall}"></a></td>
+                    <td th:text="${filmSession.hall}"/>
                     <td th:text="${#temporals.format(filmSession.startTime, 'd MMMM HH:mm')}"/>
                     <td th:text="${#temporals.format(filmSession.endTime, 'd MMMM HH:mm')}"/>
                     <td th:text="|${filmSession.price} руб.|"/>

@@ -19,7 +19,7 @@ public class AuthFilter extends HttpFilter {
         var uri = request.getRequestURI();
         var userLoggedIn = request.getSession().getAttribute("user") != null;
         if (uri.startsWith("/ticket") && !userLoggedIn) {
-            var loginPageUrl = request.getContextPath() + "/users/login";
+            var loginPageUrl = request.getContextPath() + "/loginPage";
             response.sendRedirect(loginPageUrl);
             return;
         }
